@@ -1,0 +1,11 @@
+retaildmart<- read.csv("C:/Users/Smartz/Downloads/retaildmart.csv")
+View(retaildmart)
+Retail_subset <-retaildmart[,c("Price","DiscountedPrice")]
+Retail_subset<- na.omit(Retail_subset)
+R_Model <- lm(DiscountedPrice~Price,data = Retail_subset)
+summary(R_Model)
+plot(Retail_subset,pch= 16 , col= "blue")
+abline(R_Model)
+
+
+
